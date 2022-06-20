@@ -1,0 +1,13 @@
+version: '3.8'
+networks: # to create a custom bridge
+  barisbr111: 
+services:
+  barisapp007:
+    image: barisciapp:v1 
+    build: . 
+    container_name: barisc1
+    ports:
+    - "1158:80"
+    restart: always 
+    networks: # use bridge created above 
+    - barisbr111
